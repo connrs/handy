@@ -1,59 +1,131 @@
-.fwrap { list-style-type: none; }
-.fwrap.p { margin: 0 -.5em; }
-.fwrap.p > div, .fwrap.p > section, .fwrap.p > article, .fwrap.p > aside, .fwrap.p > li {
-padding: 0 .5em;
-margin-bottom: .5em;
--webkit-box-sizing: border-box;
--moz-box-sizing: border-box;
-box-sizing: border-box;
-overflow: auto;
+/* Legend:
+ * hwr = Handy Wrapper
+ * hc2 = Wrapper has 2 columns
+ * hc3 = Wrapper has 3 columns
+ * hc4 = Wrapper has 4 columns
+ * hs2 = Column spans for 2 column widths
+ * hs3 = Column spans for 3 column widths
+ */
+
+.hwr {
+	list-style-type: none;
+	margin: 0 -.5em;
+	overflow: hidden;
+	zoom: 1;
 }
-.c2.fwrap > :nth-child(2n) { clear: right; }
-.c2.fwrap > :nth-child(2n+1) { clear: left; }
-.c3.fwrap > :nth-child(3n) { clear: right; }
-.c3.fwrap > :nth-child(3n+1) { clear: left; }
-.c4.fwrap > :nth-child(4n) { clear: right; }
-.c4.fwrap > :nth-child(4n+1) { clear: left; }
+
+.hwr.no-pad {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+.hwr > article,
+.hwr > aside,
+.hwr > div,
+.hwr > li,
+.hwr > section {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	margin-bottom: .5em;
+	overflow: auto;
+	padding: 0 .5em;
+}
+
+.hwr.no-pad > article,
+.hwr.no-pad > aside,
+.hwr.no-pad > div,
+.hwr.no-pad > li,
+.hwr.no-pad > section {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.hc2.hwr > :nth-child(2n),
+.hc3.hwr > :nth-child(3n),
+.hc4.hwr > :nth-child(4n) {
+	clear: right;
+}
+
+.hc2.hwr > :nth-child(2n+1),
+.hc3.hwr > :nth-child(3n+1),
+.hc4.hwr > :nth-child(4n+1) {
+	clear: left;
+}
+
+.hwr > * p:last-child,
+.hwr > * ul:last-child,
+.hwr > * ol:last-child,
+.hwr > * ul:last-child,
+.hwr > * li:last-child,
+.hwr > * dd:last-child {
+	margin-bottom: 0;
+}
 
 @media screen and (min-width:40em) {
-	.c2.fwrap { overflow: hidden; zoom: 1; }
-	.c2.fwrap > article, .c2.fwrap > section, .c2.fwrap > div, .c2.fwrap > li { float: left; width: 50%; }
-	.c3.fwrap { overflow: hidden; zoom: 1; }
-	.c3.fwrap > div, .c3.fwrap > section, .c3.fwrap > article, .c3.fwrap > li { float: left; width: 33.333%; }
-	.c3.fwrap > div.f32, .c3.fwrap > section.f32, .c3.fwrap > article.f32, .c3.fwrap > li.f32 { width: 66.667%; }
-	.c4.fwrap { overflow: hidden; zoom: 1; }
-	.c4.fwrap > div, .c4.fwrap > section, .c4.fwrap > article, .c4.fwrap > li { float: left; width: 25%; }
-	.c4.fwrap > div.f42, .c4.fwrap > section.f42, .c4.fwrap > article.f42, .c4.fwrap > li.f42 { width: 50%; }
-	.c4.fwrap > div.f43, .c4.fwrap > section.f43, .c4.fwrap > article.f43, .c4.fwrap > li.f43 { width: 75%; }
-	.c3.fwrap.pp > :nth-child(2n), .c4.fwrap.pp > :nth-child(2n), .c4.fwrap.pp > :nth-child(3n) { padding-left: .5em; padding-right: .5em; }
-	.c2.fwrap.pp > :nth-child(2n-1), .c3.fwrap.pp > :nth-child(3n-2), .c4.fwrap.pp > :nth-child(4n-3) { padding-left: 0; padding-right: .5em; }
-	.c2.fwrap.pp > :nth-child(2n), .c3.fwrap.pp > :nth-child(3n), .c4.fwrap.pp > :nth-child(4n) { padding-left: .5em; padding-right: 0; }
-	.ie7 .c2.fwrap > article, .ie7 .c2.fwrap > section, .ie7 .c2.fwrap > div, .ie7 .c2.fwrap > li { width: 47.5% !important; }
-	.ie7 .c3.fwrap > article, .ie7 .c3.fwrap > section, .ie7 .c3.fwrap > div, .ie7 .c3.fwrap > li { width: 31.5% !important; }
-}
-
-.c3.lwrap > div, .c3.lwrap > section, .c3.lwrap > article, .c3.lwrap > aside, .c3.lwrap > li {
--webkit-box-sizing: border-box;
--moz-box-sizing: border-box;
-box-sizing: border-box;
-}
-@media screen and (min-width: 64em) {
-	.c3.lwrap { margin: 0 -.5em; overflow: hidden; zoom: 1; }
-	.c3.lwrap > div, .c3.lwrap > section, .c3.lwrap > article, .c3.lwrap > aside, .c3.lwrap > li {
-	float: left;
-	width: 33.333%;
-	overflow: hidden;
-	padding: 0 .5em;
+	.hwr > article,
+	.hwr > aside,
+	.hwr > div,
+	.hwr > li,
+	.hwr > section {
+		float: left;
 	}
-	.c3.lwrap > div.l32, .c3.lwrap > section.l32, .c3.lwrap > article.l32, .c3.lwrap > aside.l32, .c3.lwrap > li.l32 { width: 66.667%; }
-	.ie7 .c3.lwrap > div, .ie7 .c3.lwrap > section, .ie7 .c3.lwrap > article, .ie7 .c3.lwrap > aside, .ie7 .c3.lwrap > li { width: 31.5%; }
-	.ie7 .c3.lwrap > div.l32, .ie7 .c3.lwrap > section.l32, .ie7 .c3.lwrap > article.l32, .ie7 .c3.lwrap > aside.l32, .ie7 .c3.lwrap > li.l32 { width: 66.667%; }
+
+	.hc3.hwr > article,
+	.hc3.hwr > aside,
+	.hc3.hwr > div,
+	.hc3.hwr > li,
+	.hc3.hwr > section {
+		width: 50%;
+	}
+
+
+	.hc2.hwr > article,
+	.hc2.hwr > aside,
+	.hc2.hwr > div,
+	.hc2.hwr > li,
+	.hc2.hwr > section,
+	.hc4.hwr > article,
+	.hc4.hwr > aside,
+	.hc4.hwr > div,
+	.hc4.hwr > li,
+	.hc4.hwr > section {
+		width: 50%;
+	}
+
+	.hc4.hwr > .hs2,
+	.hc3.hwr > :nth-child(3n+1) {
+		width: 100%;
+	}
+
+	.ie7 .hc2.hwr > article, .ie7 .hc2.hwr > section, .ie7 .hc2.hwr > div, .ie7 .hc2.hwr > li { width: 47.5% !important; }
+	.ie7 .hc3.hwr > article, .ie7 .hc3.hwr > section, .ie7 .hc3.hwr > div, .ie7 .hc3.hwr > li { width: 31.5% !important; }
 }
 
-.fwrap > * p:last-child,
-.fwrap > * ul:last-child,
-.fwrap > * ol:last-child,
-.fwrap > * ul:last-child,
-.fwrap > * li:last-child,
-.fwrap > * dd:last-child { margin-bottom: 0; }
+@media screen and (min-width: 64em) {
+	.hc4.hwr > article,
+	.hc4.hwr > aside,
+	.hc4.hwr > div,
+	.hc4.hwr > li,
+	.hc4.hwr > section {
+		width: 25%;
+	}
 
+	.hc3.hwr > :nth-child(3n+1),
+	.hc3.hwr > :nth-child(3n) {
+		width: 33.33%
+	}
+
+	.hc4.hwr > .hs2 {
+		width: 50%;
+	}
+
+	.hc3.hwr > .hs2 {
+		width: 66.67%;
+	}
+
+	.hc4.hwr > .hs3 {
+		width: 75%;
+	}
+
+}
