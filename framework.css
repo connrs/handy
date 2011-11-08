@@ -8,15 +8,30 @@
  */
 
 .hwr {
-	list-style-type: none;
-	margin: 0 -.5em;
-	overflow: hidden;
-	zoom: 1;
+    list-style-type: none;
+    margin: 0 -.5em;
+    overflow: hidden;
+    zoom: 1;
 }
 
 .hwr.no-pad {
-	margin-left: 0;
-	margin-right: 0;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.hwr.l {
+    margin: 0;
+    display: table;
+    table-layout: fixed;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.hwr.l > div,
+.hwr.l > section,
+.hwr.l > article,
+.hwr.l > li {
+    display: table-cell;
 }
 
 .hwr > article,
@@ -24,12 +39,12 @@
 .hwr > div,
 .hwr > li,
 .hwr > section {
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
-	box-sizing: border-box;
-	margin-bottom: .5em;
-	overflow: auto;
-	padding: 0 .5em;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-bottom: .5em;
+    overflow: auto;
+    padding: 0 .5em;
 }
 
 .hwr.no-pad > article,
@@ -37,20 +52,20 @@
 .hwr.no-pad > div,
 .hwr.no-pad > li,
 .hwr.no-pad > section {
-	padding-left: 0;
-	padding-right: 0;
+    padding-left: 0;
+    padding-right: 0;
 }
 
 .hc2.hwr > :nth-child(2n),
 .hc3.hwr > :nth-child(3n),
 .hc4.hwr > :nth-child(4n) {
-	clear: right;
+    clear: right;
 }
 
 .hc2.hwr > :nth-child(2n+1),
 .hc3.hwr > :nth-child(3n+1),
 .hc4.hwr > :nth-child(4n+1) {
-	clear: left;
+    clear: left;
 }
 
 .hwr > * p:last-child,
@@ -59,73 +74,80 @@
 .hwr > * ul:last-child,
 .hwr > * li:last-child,
 .hwr > * dd:last-child {
-	margin-bottom: 0;
+    margin-bottom: 0;
 }
 
 @media screen and (min-width:40em) {
-	.hwr > article,
-	.hwr > aside,
-	.hwr > div,
-	.hwr > li,
-	.hwr > section {
-		float: left;
-	}
+    .hwr > article,
+    .hwr > aside,
+    .hwr > div,
+    .hwr > li,
+    .hwr > section {
+        float: left;
+    }
 
-	.hc3.hwr > article,
-	.hc3.hwr > aside,
-	.hc3.hwr > div,
-	.hc3.hwr > li,
-	.hc3.hwr > section {
-		width: 50%;
-	}
+    .hwr.l > div,
+    .hwr.l > section,
+    .hwr.l > article,
+    .hwr.l > li {
+        float: none;
+    }
+
+    .hc3.hwr > article,
+    .hc3.hwr > aside,
+    .hc3.hwr > div,
+    .hc3.hwr > li,
+    .hc3.hwr > section {
+        width: 50%;
+    }
 
 
-	.hc2.hwr > article,
-	.hc2.hwr > aside,
-	.hc2.hwr > div,
-	.hc2.hwr > li,
-	.hc2.hwr > section,
-	.hc4.hwr > article,
-	.hc4.hwr > aside,
-	.hc4.hwr > div,
-	.hc4.hwr > li,
-	.hc4.hwr > section {
-		width: 50%;
-	}
+    .hc2.hwr > article,
+    .hc2.hwr > aside,
+    .hc2.hwr > div,
+    .hc2.hwr > li,
+    .hc2.hwr > section,
+    .hc4.hwr > article,
+    .hc4.hwr > aside,
+    .hc4.hwr > div,
+    .hc4.hwr > li,
+    .hc4.hwr > section {
+        width: 50%;
+    }
 
-	.hc4.hwr > .hs2,
-	.hc3.hwr > :nth-child(3n+1) {
-		width: 100%;
-	}
+    .hc4.hwr > .hs2,
+    .hc3.hwr > :nth-child(3n+1) {
+        width: 100%;
+    }
 
-	.ie7 .hc2.hwr > article, .ie7 .hc2.hwr > section, .ie7 .hc2.hwr > div, .ie7 .hc2.hwr > li { width: 47.5% !important; }
-	.ie7 .hc3.hwr > article, .ie7 .hc3.hwr > section, .ie7 .hc3.hwr > div, .ie7 .hc3.hwr > li { width: 31.5% !important; }
+    .ie7 .hc2.hwr > article, .ie7 .hc2.hwr > section, .ie7 .hc2.hwr > div, .ie7 .hc2.hwr > li { width: 47.5% !important; }
+    .ie7 .hc3.hwr > article, .ie7 .hc3.hwr > section, .ie7 .hc3.hwr > div, .ie7 .hc3.hwr > li { width: 31.5% !important; }
 }
 
 @media screen and (min-width: 64em) {
-	.hc4.hwr > article,
-	.hc4.hwr > aside,
-	.hc4.hwr > div,
-	.hc4.hwr > li,
-	.hc4.hwr > section {
-		width: 25%;
-	}
+    .hc4.hwr > article,
+    .hc4.hwr > aside,
+    .hc4.hwr > div,
+    .hc4.hwr > li,
+    .hc4.hwr > section {
+        width: 25%;
+    }
 
-	.hc3.hwr > :nth-child(3n+1),
-	.hc3.hwr > :nth-child(3n) {
-		width: 33.33%
-	}
+    .hc3.hwr > :nth-child(3n+1),
+    .hc3.hwr > :nth-child(3n) {
+        width: 33.33%
+    }
 
-	.hc4.hwr > .hs2 {
-		width: 50%;
-	}
+    .hc4.hwr > .hs2 {
+        width: 50%;
+    }
 
-	.hc3.hwr > .hs2 {
-		width: 66.67%;
-	}
+    .hc3.hwr > .hs2 {
+        width: 66.67%;
+    }
 
-	.hc4.hwr > .hs3 {
-		width: 75%;
-	}
+    .hc4.hwr > .hs3 {
+        width: 75%;
+    }
 
 }
